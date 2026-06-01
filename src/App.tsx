@@ -7,7 +7,7 @@ import Countdown from "./components/Countdown";
 import { motion } from "motion/react";
 
 // CONFIGURATION: Precious Chinoso's birthday — June 3, 2026
-const BIRTHDAY_DATE = new Date("2026-06-01T00:00:00").getTime();
+const BIRTHDAY_DATE = new Date("2026-06-03T00:00:00").getTime();
 // const BIRTHDAY_DATE = Date.now() + 5000; // Un-comment for 5-second countdown testing
 
 export default function App() {
@@ -26,7 +26,10 @@ export default function App() {
   const handleEnter = () => {
     setEntered(true);
     if (audioRef.current) {
-      audioRef.current.play().then(() => setIsPlaying(true)).catch(console.error);
+      audioRef.current
+        .play()
+        .then(() => setIsPlaying(true))
+        .catch(console.error);
       audioRef.current.volume = 0.4;
     }
   };
@@ -61,7 +64,11 @@ export default function App() {
           <div className="w-24 h-24 mx-auto mb-8 relative flex items-center justify-center">
             <motion.div
               animate={{ scale: [1, 1.1, 1], rotate: [0, 5, -5, 0] }}
-              transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+              transition={{
+                duration: 2.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
               className="text-6xl select-none"
             >
               🎁
@@ -90,12 +97,12 @@ export default function App() {
   // 3. Full website
   return (
     <div className="min-h-screen bg-burgundy-50 text-burgundy-950 font-sans selection:bg-burgundy-300 selection:text-burgundy-950 overflow-x-hidden relative">
-
       {/* Background Music */}
       <audio
         ref={audioRef}
         loop
-        src="https://cdn.pixabay.com/download/audio/2022/01/18/audio_d0a13f69d2.mp3?filename=happy-birthday-114072.mp3"
+        // src="https://cdn.pixabay.com/download/audio/2022/01/18/audio_d0a13f69d2.mp3?filename=happy-birthday-114072.mp3"
+        src="/assets/music.mp3"
       />
 
       {/* Fancy Floating Music Toggle */}
@@ -113,15 +120,23 @@ export default function App() {
             <motion.span
               key={i}
               className="w-[3px] rounded-full bg-burgundy-500"
-              animate={isPlaying ? {
-                height: ["40%", "100%", "60%", "85%", "40%"],
-              } : { height: "25%" }}
-              transition={isPlaying ? {
-                duration: 0.8,
-                repeat: Infinity,
-                delay,
-                ease: "easeInOut",
-              } : { duration: 0.3 }}
+              animate={
+                isPlaying
+                  ? {
+                      height: ["40%", "100%", "60%", "85%", "40%"],
+                    }
+                  : { height: "25%" }
+              }
+              transition={
+                isPlaying
+                  ? {
+                      duration: 0.8,
+                      repeat: Infinity,
+                      delay,
+                      ease: "easeInOut",
+                    }
+                  : { duration: 0.3 }
+              }
               style={{ display: "inline-block" }}
             />
           ))}
