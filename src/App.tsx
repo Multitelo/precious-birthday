@@ -102,7 +102,7 @@ export default function App() {
         ref={audioRef}
         loop
         // src="https://cdn.pixabay.com/download/audio/2022/01/18/audio_d0a13f69d2.mp3?filename=happy-birthday-114072.mp3"
-        src="/assets/music.mp3"
+        src="/music.mp3"
       />
 
       {/* Fancy Floating Music Toggle */}

@@ -8,7 +8,7 @@ import { Heart } from "lucide-react";
 const IMAGES = [
   {
     id: 1,
-    src: "/assets/photo-1.jpeg",   // ← replace with actual filename
+    src: "/photo-1.jpeg",   // ← replace with actual filename
     alt: "Precious Chinoso — a beautiful memory",
     caption: "Always radiant ✨",
     rotation: -6,
@@ -16,7 +16,7 @@ const IMAGES = [
   },
   {
     id: 2,
-    src: "/assets/photo-2.jpeg",   // ← replace with actual filename
+    src: "/photo-2.jpeg",   // ← replace with actual filename
     alt: "Precious Chinoso — another precious moment",
     caption: "Pure joy 🌸",
     rotation: 4,
@@ -24,7 +24,7 @@ const IMAGES = [
   },
   {
     id: 3,
-    src: "/assets/photo-3.jpeg",   // ← replace with actual filename
+    src: "/photo-3.jpeg",   // ← replace with actual filename
     alt: "Precious Chinoso — one more beautiful memory",
     caption: "Our Precious aka Brandy 💖",
     rotation: -3,
